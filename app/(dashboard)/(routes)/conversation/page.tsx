@@ -11,7 +11,7 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { Form, FormControl, FormField, FormItem } from "@/components/ui/form"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
-import { useEffect, useState } from "react"
+import {useState } from "react"
 import Empty from "@/components/empty"
 import Loader from "@/components/loader"
 import { cn } from "@/lib/utils"
@@ -19,16 +19,6 @@ import UserAvatar from "@/components/user-avatar"
 import BotAvatar from "@/components/bot-avatar"
 
 const ConversationPage = () => {
-    // const [isMounted, setIsMounted] = useState(false);
-
-    // useEffect(() => {
-    //     setIsMounted(true);
-    // }, []);
-
-    // if (!isMounted) {
-    //     return null
-    // }
-
     const router = useRouter();
 
     type userMsgArc = {
@@ -60,8 +50,6 @@ const ConversationPage = () => {
                 messages: newMessages
             });
             console.log(response.data);
-            const pushedArray = [...messages, userMessage, response.data];
-            console.log(pushedArray)
 
             setMessages((current) => [...current, userMessage, response.data]);
 
