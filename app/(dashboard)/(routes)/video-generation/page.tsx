@@ -14,9 +14,11 @@ import { Button } from "@/components/ui/button"
 import {useState } from "react"
 import Empty from "@/components/empty"
 import Loader from "@/components/loader"
+import { useProModal } from "@/hooks/use-pro-modal"
 
 const VideoGenerationPage = () => {
     const router = useRouter();
+    const proModal = useProModal();
 
     const [video, setVideo] = useState<string>();
 
@@ -39,8 +41,9 @@ const VideoGenerationPage = () => {
 
             form.reset()
         } catch (error: any) {
-            // Todo : pro model
-            console.log("form onsubmit error : ", error);
+            if(error?.response?.status === 403) {
+                proModal.onOpen();
+            }
         } finally {
             router.refresh();
         }
