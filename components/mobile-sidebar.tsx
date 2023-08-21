@@ -7,10 +7,11 @@ import Sidebar from "@/components/sidebar"
 import { useEffect, useState } from "react"
 
 interface MobileSidebarProps{
-    apiLimitCount : number
+    apiLimitCount : number;
+    isPro :boolean;
 }
 
-const MobileSidebar = ({apiLimitCount} : MobileSidebarProps) => {
+const MobileSidebar = ({apiLimitCount = 0, isPro =false} : MobileSidebarProps) => {
     // this how to handle hydration error
     const [isMounted, setIsMounted] = useState(false);
 
@@ -31,7 +32,7 @@ const MobileSidebar = ({apiLimitCount} : MobileSidebarProps) => {
             </SheetTrigger>
 
             <SheetContent side="left" className="p-0">
-                <Sidebar apiLimitCount={apiLimitCount} />
+                <Sidebar isPro={isPro} apiLimitCount={apiLimitCount} />
             </SheetContent>
         </Sheet >
 
