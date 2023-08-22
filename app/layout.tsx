@@ -10,7 +10,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Metaphor',
-  description: 'saas ai',
+  description: 'Metaphor is a saas ai platform',
   icons : {
     icon : "./favicon.ico"
   }
