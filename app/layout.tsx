@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   title: 'Metaphor',
   description: 'saas ai',
   icons : {
-    icon : "/favicon.ico"
+    icon : "./favicon.ico"
   }
 }
 
